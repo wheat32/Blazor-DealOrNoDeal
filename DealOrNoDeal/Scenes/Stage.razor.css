@@ -38,6 +38,35 @@
     cursor: pointer;
     transition: transform 0.2s ease;
     display: inline-block;
+    opacity: 1;
+}
+
+.briefcase-item.not-clickable {
+    cursor: default;
+    pointer-events: none;
+}
+
+.briefcase-item.hidden {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.briefcase-item.appearing {
+    animation: briefcaseAppear 0.3s ease-out forwards;
+}
+
+@keyframes briefcaseAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-10deg);
+    }
+    60% {
+        transform: scale(1.15) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 .briefcase-item:hover {

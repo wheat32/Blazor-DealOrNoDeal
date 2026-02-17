@@ -1,0 +1,11 @@
+@namespace DealOrNoDeal.Components
+
+@if (String.IsNullOrEmpty(Text) == false)
+{
+    <div class="subtitle-container @(IsInstruction ? "instruction" : "")">
+        <div class="subtitle-content">
+            <p>@Text</p>
+        </div>
+    </div>
+}
+

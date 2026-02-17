@@ -1,4 +1,4 @@
-@using DealOrNoDeal.Code
+@using DealOrNoDeal.Components
 @namespace DealOrNoDeal.Scenes
 
 <div class="stage-container">
@@ -7,8 +7,10 @@
         <div class="briefcase-row row-6">
             @for (int i = 21; i <= 26; i++)
             {
-                var caseNumber = i;
-                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                int caseNumber = i;
+                <div class="briefcase-item @(GetBriefcaseClass(caseNumber)) @(!CasesClickable ? "not-clickable" : "")" 
+                     data-case-number="@caseNumber"
+                     @onclick="() => OnCaseClicked(caseNumber)">
                     <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
                     <span class="briefcase-number">@caseNumber</span>
                 </div>
@@ -19,8 +21,10 @@
         <div class="briefcase-row row-7">
             @for (int i = 14; i <= 20; i++)
             {
-                var caseNumber = i;
-                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                int caseNumber = i;
+                <div class="briefcase-item @(GetBriefcaseClass(caseNumber)) @(!CasesClickable ? "not-clickable" : "")" 
+                     data-case-number="@caseNumber"
+                     @onclick="() => OnCaseClicked(caseNumber)">
                     <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
                     <span class="briefcase-number">@caseNumber</span>
                 </div>
@@ -31,8 +35,10 @@
         <div class="briefcase-row row-7">
             @for (int i = 7; i <= 13; i++)
             {
-                var caseNumber = i;
-                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                int caseNumber = i;
+                <div class="briefcase-item @(GetBriefcaseClass(caseNumber)) @(!CasesClickable ? "not-clickable" : "")" 
+                     data-case-number="@caseNumber"
+                     @onclick="() => OnCaseClicked(caseNumber)">
                     <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
                     <span class="briefcase-number">@caseNumber</span>
                 </div>
@@ -43,13 +49,17 @@
         <div class="briefcase-row row-6">
             @for (int i = 1; i <= 6; i++)
             {
-                var caseNumber = i;
-                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                int caseNumber = i;
+                <div class="briefcase-item @(GetBriefcaseClass(caseNumber)) @(!CasesClickable ? "not-clickable" : "")" 
+                     data-case-number="@caseNumber"
+                     @onclick="() => OnCaseClicked(caseNumber)">
                     <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
                     <span class="briefcase-number">@caseNumber</span>
                 </div>
             }
         </div>
     </div>
+    
+    <Subtitle Text="@CurrentSubtitle" />
 </div>
 
