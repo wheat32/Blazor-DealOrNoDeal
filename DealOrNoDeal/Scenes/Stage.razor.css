@@ -1,0 +1,139 @@
+.stage-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/dond_stage.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.briefcase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem;
+}
+
+.briefcase-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.briefcase-item {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.briefcase-item:hover {
+    transform: scale(1.1);
+}
+
+.briefcase-item:active {
+    transform: scale(0.95);
+}
+
+.briefcase-image {
+    width: 100%;
+    height: auto;
+    max-width: 120px;
+    display: block;
+}
+
+.briefcase-number {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #000;
+    text-shadow: 
+        2px 2px 0 #fff,
+        -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        1px 1px 0 #fff,
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        3px 3px 8px rgba(0, 0, 0, 0.7);
+    font-family: 'Arial Black', 'Arial Bold', sans-serif;
+    pointer-events: none;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .briefcase-image {
+        max-width: 100px;
+    }
+    
+    .briefcase-number {
+        font-size: 3rem;
+    }
+    
+    .briefcase-grid {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .briefcase-image {
+        max-width: 70px;
+    }
+    
+    .briefcase-number {
+        font-size: 2rem;
+    }
+    
+    .briefcase-grid {
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+    
+    .briefcase-row {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .briefcase-image {
+        max-width: 50px;
+    }
+    
+    .briefcase-number {
+        font-size: 1.5rem;
+    }
+    
+    .briefcase-grid {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .briefcase-row {
+        gap: 0.3rem;
+    }
+}
+

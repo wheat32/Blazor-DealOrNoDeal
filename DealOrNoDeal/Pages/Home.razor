@@ -1,5 +1,17 @@
 ﻿@page "/"
+@using DealOrNoDeal.Code
 @namespace DealOrNoDeal.Pages
 
 <PageTitle>Home</PageTitle>
 
+@switch (Game.GameState)
+{
+    case GameState.InMainMenu:
+        <MainMenu />
+        break;
+    case GameState.Intro:
+    case GameState.PickingPlayerCase:
+    case GameState.PickingCases:
+        <Stage />
+        break;
+}

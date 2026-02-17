@@ -1,0 +1,55 @@
+@using DealOrNoDeal.Code
+@namespace DealOrNoDeal.Scenes
+
+<div class="stage-container">
+    <div class="briefcase-grid">
+        @* Row 1 (Top): 6 cases (21-26) *@
+        <div class="briefcase-row row-6">
+            @for (int i = 21; i <= 26; i++)
+            {
+                var caseNumber = i;
+                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                    <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
+                    <span class="briefcase-number">@caseNumber</span>
+                </div>
+            }
+        </div>
+        
+        @* Row 2: 7 cases (14-20) *@
+        <div class="briefcase-row row-7">
+            @for (int i = 14; i <= 20; i++)
+            {
+                var caseNumber = i;
+                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                    <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
+                    <span class="briefcase-number">@caseNumber</span>
+                </div>
+            }
+        </div>
+        
+        @* Row 3: 7 cases (7-13) *@
+        <div class="briefcase-row row-7">
+            @for (int i = 7; i <= 13; i++)
+            {
+                var caseNumber = i;
+                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                    <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
+                    <span class="briefcase-number">@caseNumber</span>
+                </div>
+            }
+        </div>
+        
+        @* Row 4 (Bottom): 6 cases (1-6) *@
+        <div class="briefcase-row row-6">
+            @for (int i = 1; i <= 6; i++)
+            {
+                var caseNumber = i;
+                <div class="briefcase-item" @onclick="() => OnCaseClicked(caseNumber)">
+                    <img src="images/briefcase1_closed.png" alt="Briefcase @caseNumber" class="briefcase-image" />
+                    <span class="briefcase-number">@caseNumber</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
